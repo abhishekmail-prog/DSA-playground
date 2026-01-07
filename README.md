@@ -1,15 +1,37 @@
-# DSA Playground(C++)
+# DSA Playground 
 
-A C++ application that demonstrates basic Data Structures and Algorithms
+A C++ based Data Structures & Algorithms practice playground.
 
-## Features
+This repository contains implementations of core DSA concepts written from scratch
+to strengthen fundamentals and problem-solving skills.
 
-- Find maximum and minimum in a array
-- Reverse an array
-- Bubble sort
-- Clean multi-file project structure
+##  Topics Covered
+- Arrays
+  - Traversal
+  - Insertion & Deletion
+  - Linear Search
+  - Binary Search
+  - Max / Min
+  - Reverse Array
 
-## How to run
-```bash
-g++ main.cpp array.cpp -o dsa_playground
-./dsa_playground
+##  Tech Stack
+- Language: C++
+- Compiler: g++
+- OS: Linux
+
+##  Goal
+To build strong DSA fundamentals and prepare for software engineering interviews
+(Google, Amazon, Microsoft level).
+
+##  Future Plans
+- Sorting algorithms
+- Linked Lists
+- Stacks & Queues
+- Trees
+- Graphs
+- Recursion (advanced)
+- Time & Space optimization
+
+##  Author
+Abhishek
+
