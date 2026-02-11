@@ -20,8 +20,7 @@ to strengthen fundamentals and problem-solving skills.
 - OS: Linux
 
 ##  Goal
-To build strong DSA fundamentals and prepare for software engineering interviews
-(Google, Amazon, Microsoft level).
+To build strong DSA fundamentals and prepare for software engineering interviews.
 
 ##  Future Plans
 - Sorting algorithms
