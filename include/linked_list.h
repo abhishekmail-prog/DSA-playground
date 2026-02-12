@@ -6,6 +6,7 @@ struct Node {
 	Node* next;
 };
 
+void linkedListMenu();
 Node* insertAtHead(Node* head, int value);
 Node* insertAtTail(Node* head, int value);
 Node* deleteByValue(Node* head, int value);

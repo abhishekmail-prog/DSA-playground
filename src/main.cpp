@@ -9,6 +9,24 @@ int main()
 	int choice, value;
 
 	do {
+		std::cout << "1. Array\n";
+		std::cout << "2. Linked List\n";
+		std::cout << "3. Exit\n";
+		std::cin >> choice;
+		
+		switch(choice) {
+			case 1:
+				arrayMenu();
+				break;
+			case 2:
+				linkedListMenu();
+				break;
+		}
+
+	} while(choice != 3);
+
+	/*do {
+
 		std::cout << "--- LINKED LIST MENU ---\n";
 		std::cout << "1. Insert at Head\n";
 		std::cout << "2. Insert at Tail\n";
@@ -54,7 +72,7 @@ int main()
 				break;
 		}
 
-	} while(choice != 7);
+	} while(choice != 7);*/
 
 	/*int size, choice;
 	int maxVal, minVal, b_search;

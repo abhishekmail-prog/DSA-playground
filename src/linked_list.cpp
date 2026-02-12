@@ -1,6 +1,61 @@
 #include <iostream>
 #include "../include/linked_list.h"
 
+void linkedListMenu() {
+
+	int choice, value;
+	Node* head = NULL;
+	do {
+ 
+                 std::cout << "--- LINKED LIST MENU ---\n";
+                 std::cout << "1. Insert at Head\n";
+                 std::cout << "2. Insert at Tail\n";
+                 std::cout << "3. Delete by value\n";
+                 std::cout << "4. Search\n";
+                 std::cout << "5. Display\n";
+                 std::cout << "6. Length\n";
+                 std::cout << "7. Exit\n";
+                 std::cout << "Enter choice: ";
+                 std::cin >> choice;
+  
+                 switch(choice) {
+                         case 1:
+                                 std::cout << "Enter value: ";
+                                 std::cin >> value;
+                                 head = insertAtHead(head, value);
+                                 break;
+ 
+                         case 2:
+                                 std::cout << "Enter value: ";
+                                 std::cin >> value;
+                                 head = insertAtTail(head, value);
+                                 break;
+ 
+                         case 3:
+                                 std::cout << "Enter value: ";
+                                 std::cin >> value;
+                                 head = deleteByValue(head, value);
+                                 break;
+ 
+                         case 4:
+                                 std::cout << "Enter value: ";
+                                 std::cin >> value;
+                                 std::cout << (search(head, value) ? "Found\n" : "Not Found\n");
+                                 break;
+ 
+                         case 5:
+                                 display(head);
+                                 break;
+  
+                         case 6:
+                                 std::cout << "Length: " << length(head) << '\n';
+                                 break;
+                }
+  
+	} while(choice != 7);
+
+	
+}
 Node* insertAtHead(Node* head, int value) {
 	Node* newNode = new Node;
 	newNode->data = value;

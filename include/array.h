@@ -2,6 +2,7 @@
 #ifndef ARRAYS_H
 #define ARRAYS_H
 
+void arrayMenu();
 void printArray(int arr[], int size);
 int findMax(int arr[], int size);
 int findMin(int arr[], int size);
