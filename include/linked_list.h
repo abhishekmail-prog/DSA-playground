@@ -13,5 +13,6 @@ Node* deleteByValue(Node* head, int value);
 bool search(Node* head, int value);
 int length(Node* head);
 void display(Node* head);
+//Node* reverseLinkedList(Node* head);
 
 #endif

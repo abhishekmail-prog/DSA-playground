@@ -14,7 +14,8 @@ void linkedListMenu() {
                  std::cout << "4. Search\n";
                  std::cout << "5. Display\n";
                  std::cout << "6. Length\n";
-                 std::cout << "7. Exit\n";
+                 std::cout << "7. Reverse Linked list\n";
+		 std::cout << "8. Exit\n";
                  std::cout << "Enter choice: ";
                  std::cin >> choice;
   
@@ -50,12 +51,18 @@ void linkedListMenu() {
                          case 6:
                                  std::cout << "Length: " << length(head) << '\n';
                                  break;
-                }
+
+                	/*case 7:
+				head = reverseLinkedList(head);
+				std::cout << "Succesfully reversed linkedlist\n";
+				break;*/
+			}
   
-	} while(choice != 7);
+	} while(choice != 8);
 
 	
 }
+
 Node* insertAtHead(Node* head, int value) {
 	Node* newNode = new Node;
 	newNode->data = value;
@@ -76,6 +83,8 @@ Node* insertAtTail(Node* head, int value) {
 	while(temp->next) {
 		temp = temp->next;
 	}
+
+	temp->next  = newNode;
 
 	return head;
 }
@@ -140,3 +149,21 @@ void display(Node* head) {
 
 	std::cout << "NULL\n";
 }
+
+/*Node* reverseLinkedList(Node* head) {
+
+    Node* prev = nullptr;
+    Node* curr = head;
+    Node* next = nullptr;
+
+    while (curr != nullptr) {
+
+        next = curr->next;     
+        curr->next = prev;     
+        prev = curr;           
+        curr = next;           
+    }
+
+    return prev; 
+}
+*/
