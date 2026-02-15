@@ -54,7 +54,6 @@ void linkedListMenu() {
 
                 	case 7:
 				head = reverseLinkedList(head);
-				std::cout << "Succesfully reversed linkedlist\n";
 				break;
 			}
   
@@ -152,18 +151,21 @@ void display(Node* head) {
 
 Node* reverseLinkedList(Node* head) {
 
-    Node* prev = nullptr;
-    Node* curr = head;
-    Node* after = after;
+	if(head == NULL) {
+		std::cout << "The list is empty!\n";
+	}
+	Node* prev = nullptr;
+	Node* curr = head;
+	Node* after = after;
 
-    while (curr != nullptr) {
+	while (curr != nullptr) {
 
-        after = after->next;     
-        curr->next = prev;     
-        prev = curr;           
-        curr = after;           
-    }
+        	after = after->next;     
+        	curr->next = prev;     
+       		prev = curr;           
+        	curr = after;           
+    	}
 
-    return prev; 
+   	 return prev; 
 }
 
