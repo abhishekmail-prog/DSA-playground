@@ -52,10 +52,10 @@ void linkedListMenu() {
                                  std::cout << "Length: " << length(head) << '\n';
                                  break;
 
-                	/*case 7:
+                	case 7:
 				head = reverseLinkedList(head);
 				std::cout << "Succesfully reversed linkedlist\n";
-				break;*/
+				break;
 			}
   
 	} while(choice != 8);
@@ -150,20 +150,20 @@ void display(Node* head) {
 	std::cout << "NULL\n";
 }
 
-/*Node* reverseLinkedList(Node* head) {
+Node* reverseLinkedList(Node* head) {
 
     Node* prev = nullptr;
     Node* curr = head;
-    Node* next = nullptr;
+    Node* after = after;
 
     while (curr != nullptr) {
 
-        next = curr->next;     
+        after = after->next;     
         curr->next = prev;     
         prev = curr;           
-        curr = next;           
+        curr = after;           
     }
 
     return prev; 
 }
-*/
+
