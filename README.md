@@ -14,17 +14,35 @@ to strengthen fundamentals and problem-solving skills.
   - Max / Min
   - Reverse Array
 
+- Singly Linked List
+	- Insert at Head
+	- Insert at Tail
+	- Delete by Value
+	- Search
+	- Length
+	- Display
+	- Reverse Linked List
+
 ##  Tech Stack
 - Language: C++
 - Compiler: g++
 - OS: Linux
 
+## How to Run
+- Clone the repository:
+	- git clone https://github.com/your-username/DSA-Playground.git
+	- cd DSA-Playground
+
+- Compile and Run: 
+	- g++ main.cpp src/array.cpp src/linked_list.cpp && ./a.out
+
+
+
 ##  Goal
 To build strong DSA fundamentals and prepare for software engineering interviews.
 
 ##  Future Plans
-- Sorting algorithms
-- Linked Lists
+- Doubly Linked Lists
 - Stacks & Queues
 - Trees
 - Graphs
