@@ -1,6 +1,7 @@
 #include <iostream>
-#include "../include/array.h"
-#include "../include/linked_list.h"
+#include "include/array.h"
+#include "include/linked_list.h"
+#include "include/doubly_linked_list.h"
 
 int main()
 {
@@ -11,7 +12,8 @@ int main()
 	do {
 		std::cout << "1. Array\n";
 		std::cout << "2. Linked List\n";
-		std::cout << "3. Exit\n";
+		std::cout << "3. Doubly Linked List\n";
+		std::cout << "4. Exit\n";
 		std::cin >> choice;
 		
 		switch(choice) {
@@ -21,9 +23,12 @@ int main()
 			case 2:
 				linkedListMenu();
 				break;
+			case 3:
+				doublyLinkedListMenu();
+				break;
 		}
 
-	} while(choice != 3);
+	} while(choice != 4);
 
 	/*do {
 

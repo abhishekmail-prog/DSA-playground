@@ -1,6 +1,6 @@
 
-#ifndef ARRAYS_H
-#define ARRAYS_H
+#ifndef ARRAY_H
+#define ARRAY_H
 
 void arrayMenu();
 void printArray(int arr[], int size);
