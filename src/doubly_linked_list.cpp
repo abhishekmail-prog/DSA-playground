@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../include/doubly_linked_list.h"
 
-DNode::DNode(int value){
+DNode::DNode(int value) {
 	prev = nullptr;
 	data = value;
 	next = nullptr;
@@ -13,22 +13,22 @@ void doublyLinkedListMenu() {
 	DNode* head = NULL;
 
 	do {
-		std::cout << "1. Insert at Begining\n";
+		std::cout << "\n1. Insert at Begining\n";
 		std::cout << "2. Insert at End\n";
 		std::cout << "3. Delete by Value\n";
 		std::cout << "4. Search a element\n";
 		std::cout << "5. Length of the list\n";
 		std::cout << "6. Display the list\n";
-		std::cout << "7. Exit";
+		std::cout << "7. Exit\n";
 
-		std::cout << "Enter a choice: ";
+		std::cout << "\nEnter a choice: ";
 		std::cin >> choice;
 
 		switch(choice) {
 			case 1:
 				std::cout << "Enter value to be inserted at begining: ";
 				std::cin >> value;
-				insertAtBegining(head, value);
+				head = insertAtBegining(head, value);
 				break;
 			/*case 2:
 				std::cout << "Enter value to be inserted at end: ";
@@ -72,24 +72,28 @@ void display(DNode* head) {
 		last = temp;
 		temp = temp->next;
 	}
+	std::cout << "NULL\n";
 
 	std::cout << "Backward: ";
 	while(last != NULL) {
 		std::cout << last->data << " <-> ";
-		last = last->next;
+		last = last->prev;
 	}
+	std::cout << "NULL\n";
 }
 
 DNode* insertAtBegining(DNode* head, int value) {
-	DNode* newNode = new DNode;
+	DNode* newNode = new DNode(value);
 
 	if(head == NULL) {
 		head = newNode;
 		return newNode;
 	}
 
-	newNode->next = head;
-	head = newNode;
 	
+	newNode->next = head;
+	head->prev = newNode;
+	head = newNode;
+
 	return newNode;
 }

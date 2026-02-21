@@ -11,7 +11,7 @@ struct DNode {
 };
 
 void doublyLinkedListMenu();
-void insertAtBegining(DNode* head, int value);
+DNode* insertAtBegining(DNode* head, int value);
 void display(DNode* head);
 
 #endif
