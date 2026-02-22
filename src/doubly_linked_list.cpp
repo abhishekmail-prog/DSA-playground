@@ -30,7 +30,7 @@ void doublyLinkedListMenu() {
 				std::cin >> value;
 				head = insertAtBegining(head, value);
 				break;
-			/*case 2:
+			case 2:
 				std::cout << "Enter value to be inserted at end: ";
 				std::cin >> value;
 				head = insertAtEnd(head, value);
@@ -38,9 +38,9 @@ void doublyLinkedListMenu() {
 			case 3:
 				std::cout << "Enter the value to be deleted: ";
 				std::cin >> value;
-				head = deleteByValue(head, size);
+				head = deleteByValue(head, value);
 				break;
-			case 4:
+			/*case 4:
 				std::cout << "Enter element you want to search: ";
 				std::cin >> value;
 				std::cout << (search(head, value)) ? "Found\n" : "Not Found\n";
@@ -96,4 +96,59 @@ DNode* insertAtBegining(DNode* head, int value) {
 	head = newNode;
 
 	return newNode;
+}
+
+DNode* insertAtEnd(DNode* head, int value) {
+	DNode* newNode = new DNode(value);
+
+	if(head == NULL) {
+		head = newNode;
+		return newNode;
+	}
+	DNode* temp = head;
+
+	while(temp->next != NULL) {
+		temp = temp->next;
+	}
+	//temp->next = newNode;
+	newNode->prev = temp;
+	temp->next = newNode;
+
+	return head;
+}
+
+DNode* deleteByValue(DNode* head, int value) {
+
+	if(head == NULL) {
+		return NULL;
+	}
+	DNode* temp = head;
+
+	while(temp != NULL && temp->data != value) {
+		temp = temp->next;
+	}
+
+	if (temp == NULL) {
+		std::cout << "Element not found!\n";
+		return head;
+	}
+
+	if(temp == head) {
+		head = head->next;
+		if(head != nullptr) {
+			head->prev= nullptr;
+		}
+		std::cout << "Element successfully deleted\n";
+		delete temp;
+		return head;
+	}
+
+	if(temp->next != nullptr) {
+		temp->prev->next = temp->next;
+		temp->next->prev = temp->prev;
+		std::cout << "Element sucessfully deleted\n";
+	}
+
+	delete temp;
+	return head;
 }
