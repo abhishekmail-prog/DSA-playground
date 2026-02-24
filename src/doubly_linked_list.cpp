@@ -40,12 +40,18 @@ void doublyLinkedListMenu() {
 				std::cin >> value;
 				head = deleteByValue(head, value);
 				break;
-			/*case 4:
+			case 4:
 				std::cout << "Enter element you want to search: ";
 				std::cin >> value;
-				std::cout << (search(head, value)) ? "Found\n" : "Not Found\n";
+				int result;
+				result = searchElement(head, value);
+
+				if(result == -1)
+					std::cout << "Element not found!\n";
+				else
+					std::cout << "Element found at " << result << '\n';
 				break;
-			case 5:
+			/*case 5:
 				std::cout << "The length of the list is: " << length(head);
 				break;*/
 			case 6:
@@ -151,4 +157,19 @@ DNode* deleteByValue(DNode* head, int value) {
 
 	delete temp;
 	return head;
+}
+
+int searchElement(DNode* head, int value) {
+	int position = 1;
+
+	DNode* temp = head;
+	while(temp != nullptr) {
+		if(temp->data == value) {
+			return position;
+		}
+		temp = temp->next;
+		position++;
+	}
+
+	return -1;
 }

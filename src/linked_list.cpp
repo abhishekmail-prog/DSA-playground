@@ -1,10 +1,43 @@
 #include <iostream>
 #include "../include/linked_list.h"
 
+/*
+=======================================================================================
+Linked List Menu System
+Author: Abhishek
+Project: DSA-Playground
+
+Description: 
+Provides a menu driven interface to perform common singly linked list operations like:
+
+1. Insert At Head
+2. Insert At Tail
+3. Delete by Value
+4. Search Element
+5. Display List
+6. Find length
+7. Reverse Linked List
+8. Exit
+
+Concepts used:
+~ Pointers
+~ Dynamic Memory Allocation
+~ Structures
+~ Linked List Traversal
+~ Iterative Reversal
+=======================================================================================
+*/
+
 void linkedListMenu() {
+
+	// choice -> user menu selection
+	// value  -> value entered by user
+	// head   -> pointer to first node of linked list
 
 	int choice, value;
 	Node* head = NULL;
+
+	// Menu loop runs until usr selects Exit (8)
 	do {
  
                  std::cout << "--- LINKED LIST MENU ---\n";
@@ -56,11 +89,23 @@ void linkedListMenu() {
 				head = reverseLinkedList(head);
 				break;
 			}
-  
 	} while(choice != 8);
-
-	
 }
+
+/*
+=======================================================================================Function: insertAtHead
+Description: 
+Inserts a new node at the begining of the linked list.
+
+Algorithm:
+Create a new node.
+Make its next pointer print to current head.
+Update head to new node.
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+=======================================================================================
+*/
 
 Node* insertAtHead(Node* head, int value) {
 	Node* newNode = new Node;
@@ -69,6 +114,21 @@ Node* insertAtHead(Node* head, int value) {
 
 	return newNode;
 }
+
+/*
+=======================================================================================
+Function: insertAtTail
+Description:
+Inserts a new node at the end of the linked list.
+
+Algorithm:
+Traverse until last node.
+Attack new node at the end.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+=======================================================================================
+*/
 
 Node* insertAtTail(Node* head, int value) {
 	Node* newNode = new Node;
@@ -87,6 +147,21 @@ Node* insertAtTail(Node* head, int value) {
 
 	return head;
 }
+
+/*
+=======================================================================================
+Function: deleteByValue
+Description:
+Deletes the first occurrence of a given value.
+
+Algorithm:
+If head contains value, delete head.
+Otherwise, traverse and unlink matching node.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+=======================================================================================
+*/
 
 Node* deleteByValue(Node* head, int value) {
 	if(!head)
@@ -115,6 +190,21 @@ Node* deleteByValue(Node* head, int value) {
 	return head;
 }
 
+/*
+=======================================================================================
+Function; search
+Description:
+Searches for a value in the linked list
+
+Returns:
+true  -> if value found
+false -> if value not found
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+=======================================================================================
+*/
+
 bool search(Node* head, int value) {
 	while(head) {
 		if(head->data == value)
@@ -125,6 +215,17 @@ bool search(Node* head, int value) {
 	return false;
 }
 
+/*
+=======================================================================================
+Function: length
+Description: 
+Counts and returns number of nodes in the linked list.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+=======================================================================================
+*/
+
 int length(Node* head) {
 	int count = 0;
 	while(head) {
@@ -134,6 +235,17 @@ int length(Node* head) {
 
 	return count;
 }
+
+/*
+=======================================================================================
+Function: display
+Description: 
+Prints the linked list in readable format.
+
+Example:
+10 -> 20 -> 30 -> NULL
+=======================================================================================
+*/
 
 void display(Node* head) {
 	if(!head) {
@@ -148,6 +260,23 @@ void display(Node* head) {
 
 	std::cout << "NULL\n";
 }
+
+/*
+=======================================================================================
+Function: reverseLinkedList
+Description:
+Reverses the linked list using iterative apprach.
+
+Algorithm:
+Use three pointers:
+prev, curr, next
+
+Reverse links one by one.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+=======================================================================================
+*/
 
 Node* reverseLinkedList(Node* head) {
 
@@ -166,6 +295,5 @@ Node* reverseLinkedList(Node* head) {
         	curr = after;           
     	}
 
-   	 return prev; 
+   	return prev; 
 }
-
