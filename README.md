@@ -30,7 +30,7 @@ to strengthen fundamentals and problem-solving skills.
 
 ## How to Run
 - Clone the repository:
-	- git clone https://github.com/your-username/DSA-Playground.git
+	- git clone https://github.com/abhishekmail-prog/DSA-Playground.git
 	- cd DSA-Playground
 
 - Compile and Run: 
