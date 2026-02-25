@@ -13,7 +13,8 @@ int main()
 		std::cout << "1. Array\n";
 		std::cout << "2. Linked List\n";
 		std::cout << "3. Doubly Linked List\n";
-		std::cout << "4. Exit\n";
+		std::cout << "4. Stack\n";
+		std::cout << "5. Exit\n";
 		std::cin >> choice;
 		
 		switch(choice) {
@@ -26,9 +27,14 @@ int main()
 			case 3:
 				doublyLinkedListMenu();
 				break;
+			case 4: 
+				stackMenu();
+				break;
+			default:
+				std::cout << "Invalid choice! Try again.\n"
 		}
 
-	} while(choice != 4);
+	} while(choice != 5);
 
 	/*do {
 
