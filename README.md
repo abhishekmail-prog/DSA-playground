@@ -23,6 +23,14 @@ to strengthen fundamentals and problem-solving skills.
 	- Display
 	- Reverse Linked List
 
+- Doubly Linked list
+	- Insert at Head
+	- Insert at Tail
+	- Delete by Value
+	- Display forward
+	- Display backward
+	- Length
+
 ##  Tech Stack
 - Language: C++
 - Compiler: g++
@@ -34,7 +42,7 @@ to strengthen fundamentals and problem-solving skills.
 	- cd DSA-Playground
 
 - Compile and Run: 
-	- g++ main.cpp src/array.cpp src/linked_list.cpp && ./a.out
+	- g++ main.cpp src/array.cpp src/linked_list.cpp src/doubly_linked_list.cpp && ./a.out
 
 
 
@@ -42,7 +50,6 @@ to strengthen fundamentals and problem-solving skills.
 To build strong DSA fundamentals and prepare for software engineering interviews.
 
 ##  Future Plans
-- Doubly Linked Lists
 - Stacks & Queues
 - Trees
 - Graphs

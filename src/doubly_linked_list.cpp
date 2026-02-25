@@ -46,14 +46,18 @@ void doublyLinkedListMenu() {
 				int result;
 				result = searchElement(head, value);
 
-				if(result == -1)
+				if(result == -1) {
 					std::cout << "Element not found!\n";
-				else
+				}
+				else {
 					std::cout << "Element found at " << result << '\n';
+				}
 				break;
-			/*case 5:
-				std::cout << "The length of the list is: " << length(head);
-				break;*/
+			case 5:
+				int length;
+				length = lengthOfList(head);
+				std::cout << "The length of the list is: " << length << '\n';
+				break;
 			case 6:
 				display(head);
 				break;
@@ -66,6 +70,7 @@ void doublyLinkedListMenu() {
 
 void display(DNode* head) {
 	if(head == NULL) {
+		std::cout << "List is empty!\n";
 		return;
 	}
 	
@@ -172,4 +177,13 @@ int searchElement(DNode* head, int value) {
 	}
 
 	return -1;
+}
+int lengthOfList(DNode* head) {
+	
+	int count = 0;
+	while(head) {
+		count++;
+		head = head->next;
+	}
+	return count;
 }
