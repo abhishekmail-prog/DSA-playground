@@ -5,6 +5,8 @@ void stackMenu() {
 
 	int choice;
 	int size;
+	int poppedValue;
+	int peekValue;
 	Stack* stack;
 	do {
 		std::cout << "1. Create Stack\n";
@@ -41,12 +43,18 @@ void stackMenu() {
 				}
 				break;
 			case 4:
+				push(stack, size);
 				break;
 			case 5:
+				poppedValue = pop(stack);
+				std::cout << poppedValue << "sucessfully poppoed\n";
 				break;
 			case 6:
+				peekValue = peek(stack);
+				std::cout << "Top element is: " << peekValue(stack); 
 				break;
 			case 7:
+				freeStack(stack);
 				break;
 			default:
 				std::cout << "Invalid choice! Try again.\n";
@@ -71,5 +79,42 @@ bool isFull() {
 	return (s->top == s->capacity - 1);
 }
 
+void push(Stack* s, int value) {
+	
+	if(isFull) {
+		std::cout << "Stack Overflow\n";
+		return;
+	}
 
+	s->top++;
+	s->arr[top] = value;
 
+	std::cout << value << " pushed successfully\n";
+}
+
+int pop(Staack* s, int value) {
+	if(isEmpty) {
+		std::cout << "Stack Overflow\n";
+		return;
+	}
+
+	int poppedValue = s->arr[top];
+	s->top--;
+
+	return poppedValue;
+}
+
+int peek(Stack* s) {
+	
+	if(isEmpty(s)) {
+		std::cout << "Stack is Empty\n";
+		return -1;
+	}
+
+	return s->arr[s->top];
+}
+
+void freeStack(Stack* s) {
+	delete s->arr;
+	delete s;
+}
