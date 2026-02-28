@@ -2,11 +2,10 @@
 #include "include/array.h"
 #include "include/linked_list.h"
 #include "include/doubly_linked_list.h"
+#include "include/stack.h"
 
 int main()
 {
-
-	Node* head = nullptr;
 	int choice, value;
 
 	do {
