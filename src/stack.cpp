@@ -8,6 +8,7 @@ void stackMenu() {
 	int poppedValue;
 	int peekValue;
 	int top = -1;
+	int value;
 	Stack* stack;
 	do {
 		std::cout << "1. Create Stack\n";
@@ -44,7 +45,9 @@ void stackMenu() {
 				}
 				break;
 			case 4:
-				push(stack, size, top);
+				std::cout << "Enter element to be pushed: ";
+				std::cin >> value;
+				push(stack, value, top);
 				break;
 			case 5:
 				poppedValue = pop(stack, top);
@@ -52,7 +55,7 @@ void stackMenu() {
 				break;
 			case 6:
 				peekValue = peek(stack, top);
-				std::cout << "Top element is: " << peekValue; 
+				std::cout << "Top element is: " << peekValue << "\n"; 
 				break;
 			case 7:
 				freeStack(stack);
@@ -82,7 +85,7 @@ bool isFull(Stack* s) {
 
 void push(Stack* s, int value, int top) {
 	
-	if(isFull) {
+	if(isFull(s)) {
 		std::cout << "Stack Overflow\n";
 		return;
 	}
@@ -94,7 +97,7 @@ void push(Stack* s, int value, int top) {
 }
 
 int pop(Stack* s, int top) {
-	if(isEmpty) {
+	if(isEmpty(s)) {
 		std::cout << "Stack Overflow\n";
 		return -1;
 	}
@@ -112,7 +115,7 @@ int peek(Stack* s, int top) {
 		return -1;
 	}
 
-	return s->arr[s->top];
+	return s->arr[top];
 }
 
 void freeStack(Stack* s) {
