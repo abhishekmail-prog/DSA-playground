@@ -7,10 +7,11 @@ void stackMenu() {
 	int size;
 	int poppedValue;
 	int peekValue;
+	int top = -1;
 	Stack* stack;
 	do {
 		std::cout << "1. Create Stack\n";
-		std::cout << "2. isEmpty\n"
+		std::cout << "2. isEmpty\n";
 		std::cout << "3. isFull\n";
 		std::cout << "4. Push\n";
 		std::cout << "5. Pop\n";
@@ -24,18 +25,18 @@ void stackMenu() {
 			case 1:
 				std::cout << "Enter size: ";	
 				std::cin >> size;
-				stack = createStack(size):
+				stack = createStack(stack, size);
 				break;
 			case 2:
-				if(isEmpty()) {
+				if(isEmpty(stack)) {
 					std::cout << "Yes! The stack is Empty.\n";
 				}
 				else {
-					std::cout "No! The stack is not Empty.\n";
+					std::cout << "No! The stack is not Empty.\n";
 				}
 				break;
 			case 3:
-				if(isFull()) {
+				if(isFull(stack)) {
 					std::cout << "Yes! THe stack is Full.\n";
 				}
 				else {
@@ -43,15 +44,15 @@ void stackMenu() {
 				}
 				break;
 			case 4:
-				push(stack, size);
+				push(stack, size, top);
 				break;
 			case 5:
-				poppedValue = pop(stack);
+				poppedValue = pop(stack, top);
 				std::cout << poppedValue << "sucessfully poppoed\n";
 				break;
 			case 6:
-				peekValue = peek(stack);
-				std::cout << "Top element is: " << peekValue(stack); 
+				peekValue = peek(stack, top);
+				std::cout << "Top element is: " << peekValue; 
 				break;
 			case 7:
 				freeStack(stack);
@@ -62,7 +63,7 @@ void stackMenu() {
 	} while(choice != 8);
 }
 
-Stack* stack(int size) {
+Stack* stack(Stack* s, int size) {
 	Stack* s = new Stack;
 	s->capacity = size;
 	s->top = -1;
@@ -71,15 +72,15 @@ Stack* stack(int size) {
 	return s;
 }
 
-bool isEmpty() {
+bool isEmpty(Stack* s) {
 	return (s->top == -1);
 }
 
-bool isFull() {
+bool isFull(Stack* s) {
 	return (s->top == s->capacity - 1);
 }
 
-void push(Stack* s, int value) {
+void push(Stack* s, int value, int top) {
 	
 	if(isFull) {
 		std::cout << "Stack Overflow\n";
@@ -92,10 +93,10 @@ void push(Stack* s, int value) {
 	std::cout << value << " pushed successfully\n";
 }
 
-int pop(Staack* s, int value) {
+int pop(Stack* s, int value, int top) {
 	if(isEmpty) {
 		std::cout << "Stack Overflow\n";
-		return;
+		return -1;
 	}
 
 	int poppedValue = s->arr[top];
@@ -104,7 +105,7 @@ int pop(Staack* s, int value) {
 	return poppedValue;
 }
 
-int peek(Stack* s) {
+int peek(Stack* s, int top) {
 	
 	if(isEmpty(s)) {
 		std::cout << "Stack is Empty\n";

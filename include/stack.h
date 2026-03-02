@@ -9,12 +9,12 @@ struct Stack {
 };
 
 void stackMenu();
-Stack* createStack(int size);
+Stack* createStack(Stack* s, int size);
 bool isEmpty(Stack* s);
 bool isFull(Stack* s);
-void push(Stack* s, int value);
-int pop(Stack* s);
-int peek(Stack* s);
+void push(Stack* s, int value, int top);
+int pop(Stack* s, int top);
+int peek(Stack* s, int top);
 void freeStack(Stack* s);
 
 #endif

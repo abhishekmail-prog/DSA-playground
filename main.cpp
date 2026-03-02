@@ -30,7 +30,7 @@ int main()
 				stackMenu();
 				break;
 			default:
-				std::cout << "Invalid choice! Try again.\n"
+				std::cout << "Invalid choice! Try again.\n";
 		}
 
 	} while(choice != 5);
