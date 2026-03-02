@@ -9,7 +9,7 @@ struct Stack {
 };
 
 void stackMenu();
-Stack* createStack(Stack* s, int size);
+Stack* createStack(int size);
 bool isEmpty(Stack* s);
 bool isFull(Stack* s);
 void push(Stack* s, int value, int top);

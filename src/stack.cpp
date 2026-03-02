@@ -25,7 +25,7 @@ void stackMenu() {
 			case 1:
 				std::cout << "Enter size: ";	
 				std::cin >> size;
-				stack = createStack(stack, size);
+				stack = createStack(size);
 				break;
 			case 2:
 				if(isEmpty(stack)) {
@@ -63,7 +63,7 @@ void stackMenu() {
 	} while(choice != 8);
 }
 
-Stack* stack(Stack* s, int size) {
+Stack* createStack(int size) {
 	Stack* s = new Stack;
 	s->capacity = size;
 	s->top = -1;
@@ -93,7 +93,7 @@ void push(Stack* s, int value, int top) {
 	std::cout << value << " pushed successfully\n";
 }
 
-int pop(Stack* s, int value, int top) {
+int pop(Stack* s, int top) {
 	if(isEmpty) {
 		std::cout << "Stack Overflow\n";
 		return -1;
