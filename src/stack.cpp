@@ -60,6 +60,11 @@ void stackMenu() {
 				break;
 			case 7:
 				freeStack(stack);
+				stack = nullptr;
+
+				if(stack == nullptr) {
+					std::cout << "Stack memory freed Sucessfully\n\n";
+				}
 				break;
 			default:
 				std::cout << "Invalid choice! Try again.\n\n";
@@ -120,6 +125,6 @@ int peek(Stack* s, int top) {
 }
 
 void freeStack(Stack* s) {
-	delete s->arr;
+	delete[] s->arr;
 	delete s;
 }
