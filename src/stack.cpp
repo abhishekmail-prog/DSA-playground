@@ -27,21 +27,22 @@ void stackMenu() {
 				std::cout << "Enter size: ";	
 				std::cin >> size;
 				stack = createStack(size);
+				std::cout << "Stack sucessfully Created!\n\n";
 				break;
 			case 2:
 				if(isEmpty(stack)) {
-					std::cout << "Yes! The stack is Empty.\n";
+					std::cout << "Yes! The stack is Empty.\n\n";
 				}
 				else {
-					std::cout << "No! The stack is not Empty.\n";
+					std::cout << "No! The stack is not Empty.\n\n";
 				}
 				break;
 			case 3:
 				if(isFull(stack)) {
-					std::cout << "Yes! THe stack is Full.\n";
+					std::cout << "Yes! THe stack is Full.\n\n";
 				}
 				else {
-					std::cout << "No! The stack is not rmpty.\n";
+					std::cout << "No! The stack is not Full.\n\n";
 				}
 				break;
 			case 4:
@@ -51,17 +52,17 @@ void stackMenu() {
 				break;
 			case 5:
 				poppedValue = pop(stack, top);
-				std::cout << poppedValue << "sucessfully poppoed\n";
+				std::cout << poppedValue << " sucessfully poppoed\n\n";
 				break;
 			case 6:
 				peekValue = peek(stack, top);
-				std::cout << "Top element is: " << peekValue << "\n"; 
+				std::cout << "Top element is: " << peekValue << "\n\n"; 
 				break;
 			case 7:
 				freeStack(stack);
 				break;
 			default:
-				std::cout << "Invalid choice! Try again.\n";
+				std::cout << "Invalid choice! Try again.\n\n";
 		}
 	} while(choice != 8);
 }
@@ -86,19 +87,19 @@ bool isFull(Stack* s) {
 void push(Stack* s, int value, int top) {
 	
 	if(isFull(s)) {
-		std::cout << "Stack Overflow\n";
+		std::cout << "Stack Overflow\n\n";
 		return;
 	}
 
 	s->top++;
 	s->arr[top] = value;
 
-	std::cout << value << " pushed successfully\n";
+	std::cout << value << " pushed successfully\n\n";
 }
 
 int pop(Stack* s, int top) {
 	if(isEmpty(s)) {
-		std::cout << "Stack Overflow\n";
+		std::cout << "Stack Underflow\n\n";
 		return -1;
 	}
 
@@ -111,7 +112,7 @@ int pop(Stack* s, int top) {
 int peek(Stack* s, int top) {
 	
 	if(isEmpty(s)) {
-		std::cout << "Stack is Empty\n";
+		std::cout << "Stack is Empty\n\n";
 		return -1;
 	}
 
