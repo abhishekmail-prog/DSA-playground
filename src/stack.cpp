@@ -9,7 +9,7 @@ void stackMenu() {
 	int peekValue;
 	int top = -1;
 	int value;
-	Stack* stack;
+	Stack* stack = nullptr;
 	do {
 		std::cout << "1. Create Stack\n";
 		std::cout << "2. isEmpty\n";
@@ -17,10 +17,11 @@ void stackMenu() {
 		std::cout << "4. Push\n";
 		std::cout << "5. Pop\n";
 		std::cout << "6. Peek\n";
-		std::cout << "7. freeStack\n";
-
+		std::cout << "7. Free Stack\n";
+		std::cout << "8. Exit\n";
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
+
 
 		switch(choice) {
 			case 1:
@@ -30,41 +31,74 @@ void stackMenu() {
 				std::cout << "Stack sucessfully Created!\n\n";
 				break;
 			case 2:
-				if(isEmpty(stack)) {
-					std::cout << "Yes! The stack is Empty.\n\n";
+				if(stack == nullptr) {
+					std::cout << "Create stack first!\n\n";
 				}
 				else {
-					std::cout << "No! The stack is not Empty.\n\n";
+					if(isEmpty(stack)) {
+						std::cout << "Yes! The stack is Empty.\n\n";
+					}
+					else {
+						std::cout << "No! The stack is not Empty.\n\n";
+					}
 				}
 				break;
 			case 3:
-				if(isFull(stack)) {
-					std::cout << "Yes! THe stack is Full.\n\n";
+				if(stack == nullptr) {
+					std::cout << "Create stack first!\n\n";
 				}
 				else {
-					std::cout << "No! The stack is not Full.\n\n";
+					if(isFull(stack)) {
+						std::cout << "Yes! The stack is Full.\n\n";
+					}
+					else {
+						std::cout << "No! The stack is not Full.\n\n";
+					}
 				}
 				break;
 			case 4:
-				std::cout << "Enter element to be pushed: ";
-				std::cin >> value;
-				push(stack, value, top);
+				if(stack == nullptr) {
+					std::cout << "Create stack first!\n\n";
+				}
+				else {
+					std::cout << "Enter element to be pushed: ";
+					std::cin >> value;
+					push(stack, value, top);
+				}
 				break;
 			case 5:
-				poppedValue = pop(stack, top);
-				std::cout << poppedValue << " sucessfully poppoed\n\n";
+				if(stack == nullptr) {
+					std::cout << "Create stack first!\n\n";
+				}
+				else {
+					poppedValue = pop(stack, top);
+					std::cout << poppedValue << " sucessfully popped\n\n";
+				}
 				break;
 			case 6:
-				peekValue = peek(stack, top);
-				std::cout << "Top element is: " << peekValue << "\n\n"; 
+				if(stack == nullptr) {
+					std::cout << "Create stack first!\n\n";
+				}
+				else {
+					peekValue = peek(stack, top);
+					std::cout << "Top element is: " << peekValue << "\n\n"; 
+				}
 				break;
 			case 7:
-				freeStack(stack);
-				stack = nullptr;
-
 				if(stack == nullptr) {
-					std::cout << "Stack memory freed Sucessfully\n\n";
+					std::cout << "Create stack first!\n";
 				}
+				else {
+					freeStack(stack);
+					stack = nullptr;
+				
+					if(stack == nullptr) {
+						std::cout << "Stack memory freed Sucessfully\n\n";
+					}
+				}
+				break;
+			case 8:
+				std::cout << "Exiting!\n";
 				break;
 			default:
 				std::cout << "Invalid choice! Try again.\n\n";
