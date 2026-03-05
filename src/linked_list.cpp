@@ -88,6 +88,13 @@ void linkedListMenu() {
                 	case 7:
 				head = reverseLinkedList(head);
 				break;
+
+			case 8:
+				std::cout << "Returning to Main Menu..\n\n";
+				break;
+
+			default:
+				std::cout << "Invalid choice!\n";
 			}
 	} while(choice != 8);
 }

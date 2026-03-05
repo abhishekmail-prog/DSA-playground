@@ -30,6 +30,7 @@ void stackMenu() {
 				stack = createStack(size);
 				std::cout << "Stack sucessfully Created!\n\n";
 				break;
+
 			case 2:
 				if(stack == nullptr) {
 					std::cout << "Create stack first!\n\n";
@@ -43,6 +44,7 @@ void stackMenu() {
 					}
 				}
 				break;
+
 			case 3:
 				if(stack == nullptr) {
 					std::cout << "Create stack first!\n\n";
@@ -56,6 +58,7 @@ void stackMenu() {
 					}
 				}
 				break;
+
 			case 4:
 				if(stack == nullptr) {
 					std::cout << "Create stack first!\n\n";
@@ -66,6 +69,7 @@ void stackMenu() {
 					push(stack, value, top);
 				}
 				break;
+
 			case 5:
 				if(stack == nullptr) {
 					std::cout << "Create stack first!\n\n";
@@ -75,6 +79,7 @@ void stackMenu() {
 					std::cout << poppedValue << " sucessfully popped\n\n";
 				}
 				break;
+
 			case 6:
 				if(stack == nullptr) {
 					std::cout << "Create stack first!\n\n";
@@ -84,6 +89,7 @@ void stackMenu() {
 					std::cout << "Top element is: " << peekValue << "\n\n"; 
 				}
 				break;
+
 			case 7:
 				if(stack == nullptr) {
 					std::cout << "Create stack first!\n";
@@ -97,9 +103,11 @@ void stackMenu() {
 					}
 				}
 				break;
+
 			case 8:
-				std::cout << "Exiting!\n";
+				std::cout << "Returning to Main Menu...\n\n";
 				break;
+
 			default:
 				std::cout << "Invalid choice! Try again.\n\n";
 		}

@@ -30,16 +30,19 @@ void doublyLinkedListMenu() {
 				std::cin >> value;
 				head = insertAtBegining(head, value);
 				break;
+
 			case 2:
 				std::cout << "Enter value to be inserted at end: ";
 				std::cin >> value;
 				head = insertAtEnd(head, value);
 				break;
+
 			case 3:
 				std::cout << "Enter the value to be deleted: ";
 				std::cin >> value;
 				head = deleteByValue(head, value);
 				break;
+
 			case 4:
 				std::cout << "Enter element you want to search: ";
 				std::cin >> value;
@@ -53,14 +56,21 @@ void doublyLinkedListMenu() {
 					std::cout << "Element found at " << result << '\n';
 				}
 				break;
+
 			case 5:
 				int length;
 				length = lengthOfList(head);
 				std::cout << "The length of the list is: " << length << '\n';
 				break;
+
 			case 6:
 				display(head);
 				break;
+
+			case 7:
+				std::cout << "Returning to Main Menu...\n\n";
+				break;
+
 			default:
 				std::cout << "Invalid choice! Try again.\n";
 		} 

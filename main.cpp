@@ -29,6 +29,9 @@ int main()
 			case 4: 
 				stackMenu();
 				break;
+			case 5:
+				std::cout << "Exiting DSA Playground. Goodbye!\n";
+				break;
 			default:
 				std::cout << "Invalid choice! Try again.\n";
 		}

@@ -34,7 +34,7 @@ void arrayMenu() {
 	// minVal   -> sotres minimum element
 	// b_search -> stores index returned by binary search
 
-	int size, choice;
+	int size, your_choice;
         int maxVal, minVal, b_search;
 
 	//Take array size from user
@@ -67,59 +67,59 @@ void arrayMenu() {
 		
 		// Take user choice
                 std::cout << "Enter your choice: ";
-                std::cin >> choice;
+                std::cin >> your_choice;
 		
 		// Validates input choice
-	        if(choice > 5 || choice < 1) {
+	        if(your_choice > 5 || your_choice < 1) {
                         std::cout << "Invalid choice! Try again." << '\n';
                 }
 		
 		// Perform operations based on your choice
-                switch(choice) {
+                switch(your_choice) {
 			
 			// Find maximum element
                         case 1:
                                 maxVal = findMax(arr, size);
                                 std::cout << "Maximum element is: " << maxVal;
-                                putchar('\n');
+                                std::cout << '\n';
                                 break;
 
 			// Find minimum element
                         case 2:
                                 minVal = findMin(arr, size);
                                 std::cout << "Minimum element is: " << minVal;
-                                putchar('\n');
+                                std::cout << '\n';
                                 break;
 
 			// Reverse the Array
                         case 3:
                                 reverseArray(arr, size);
-                                putchar('\n');
+                                std::cout << '\n';
                                 std::cout << "Array after Reverse!" << '\n';
                                 printArray(arr, size);
-                                putchar('\n');
+                                std::cout << '\n';
                                 break;
 
 			// Sort array using Bubble Sort
                         case 4:
                                 bubbleSort(arr, size);
-                                putchar('\n');
+                                std::cout << '\n';
                                 std::cout << "Array after Bubble Sort!" << '\n';
                                 printArray(arr, size);
-                                putchar('\n');
+                                std::cout << '\n';
                                 break;
 
 			// Perform Binary Search (array must be sorted)
                         case 5:
                                 b_search = binarySearch(arr, size);
                                 std::cout << "Element found at index:  " << b_search << '\n';
-                                putchar('\n');
+                                std::cout << '\n';
                                 break;
 
 			// Exiting option
 			case 6:
-				std::cout << "Exiting Program...\n";
-				break;
+				std::cout << "Returning to Main Menu.\n\n";
+				return;
 
 			// Invalid input handler
                         default:
@@ -127,7 +127,7 @@ void arrayMenu() {
 
                 }
 
-        } while(choice != 6);
+        } while(your_choice != 6);
 }
 
 
@@ -150,7 +150,7 @@ void printArray(int arr[], int size){
                 std::cout << arr[i] << " ";
         }
 
-        putchar('\n');
+        std::cout << '\n';
 }
 /*
 ==================================================================================
