@@ -1,4 +1,4 @@
-# DSA Playground 
+ DSA Playground 
 
 A C++ based Data Structures & Algorithms practice playground.
 
@@ -31,6 +31,15 @@ to strengthen fundamentals and problem-solving skills.
 	- Display backward
 	- Length
 
+- Stack
+	- Create Stack
+	- Push
+	- Pop
+	- Peek
+	- Check is Stack is Empty
+	- Check is Stack if Full
+	- Free Stack Memory
+
 ##  Tech Stack
 - Language: C++
 - Compiler: g++
@@ -50,7 +59,7 @@ to strengthen fundamentals and problem-solving skills.
 To build strong DSA fundamentals and prepare for software engineering interviews.
 
 ##  Future Plans
-- Stacks & Queues
+- Queues
 - Trees
 - Graphs
 - Recursion (advanced)
