@@ -1,70 +1,100 @@
- DSA Playground 
+## 🚀 DSA Playground 
 
 A C++ based Data Structures & Algorithms practice playground.
 
 This repository contains implementations of core DSA concepts written from scratch
-to strengthen fundamentals and problem-solving skills.
+to strengthen fundamentals, problem-solving skills, and low-level understanding.
+
+---
 
 ##  Topics Covered
-- Arrays
-  - Traversal
-  - Insertion & Deletion
-  - Linear Search
-  - Binary Search
-  - Max / Min
-  - Reverse Array
 
-- Singly Linked List
-	- Insert at Head
-	- Insert at Tail
-	- Delete by Value
-	- Search
-	- Length
-	- Display
-	- Reverse Linked List
+### 🔹 Arrays
+- Traversal
+- Insertion & Deletion
+- Linear Search
+- Binary Search
+- Max / Min
+- Reverse Array
+- Sorting (Bubble Sort)
 
-- Doubly Linked list
-	- Insert at Head
-	- Insert at Tail
-	- Delete by Value
-	- Display forward
-	- Display backward
-	- Length
+---
 
-- Stack
-	- Create Stack
-	- Push
-	- Pop
-	- Peek
-	- Check is Stack is Empty
-	- Check is Stack if Full
-	- Free Stack Memory
+###  Singly Linked List
+- Insert at Head
+- Insert at Tail
+- Delete by Value
+- Search
+- Length
+- Display
+- Reverse Linked List
+
+---
+
+###  Doubly Linked List
+- Insert at Head
+- Insert at Tail
+- Delete by Value
+- Display Forward
+- Display Backward
+- Length
+
+---
+
+###  Stack (Array Implementation)
+- Create Stack
+- Push
+- Pop
+- Peek
+- isEmpty
+- Display
+- Free Stack
+
+---
+
+### 🔹 Queue (Array Implementation)
+- Create Queue
+- Enqueue
+- Dequeue
+- Peek
+- isEmpty
+- isFull
+- Display
+- Free Queue
+
+---
 
 ##  Tech Stack
 - Language: C++
 - Compiler: g++
 - OS: Linux
 
-## How to Run
-- Clone the repository:
+---
+
+##  How to Run
+- Clone the repository
 	- git clone https://github.com/abhishekmail-prog/DSA-Playground.git
 	- cd DSA-Playground
 
-- Compile and Run: 
-	- g++ main.cpp src/array.cpp src/linked_list.cpp src/doubly_linked_list.cpp && ./a.out
+- Compile and Run:
+	- g++ main.cpp src/array.cpp src/linked_list.cpp src/doubly_linked_list.cpp src/stack.cpp src/queue.cpp ** ./a.out
 
+---
 
-
-##  Goal
+## Goal
 To build strong DSA fundamentals and prepare for software engineering interviews.
 
-##  Future Plans
-- Queues
-- Trees
+---
+
+## Future Plans
+- Circular queue
+- Trees (BST, Traversals)
 - Graphs
-- Recursion (advanced)
-- Time & Space optimization
+- Recursion (Advanced Problems)
+- STL Implementation Comparison
+- Time and Space Optimizaiton Techniques
 
-##  Author
+---
+
+## Author
 Abhishek
-

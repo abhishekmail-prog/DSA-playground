@@ -18,6 +18,7 @@ void stackMenu() {
 		std::cout << "6. Peek\n";
 		std::cout << "7. Free Stack\n";
 		std::cout << "8. Exit\n";
+
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
 
