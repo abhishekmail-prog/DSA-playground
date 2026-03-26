@@ -3,13 +3,12 @@
 
 void stackMenu() {
 
-	int choice;
-	int size;
-	int poppedValue;
-	int peekValue;
-	int top = -1;
-	int value;
+	int choice, size;
+	int poppedValue, peekValue;
+	int top = -1, value;
+
 	Stack* stack = nullptr;
+
 	do {
 		std::cout << "1. Create Stack\n";
 		std::cout << "2. isEmpty\n";
@@ -21,7 +20,6 @@ void stackMenu() {
 		std::cout << "8. Exit\n";
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
-
 
 		switch(choice) {
 			case 1:
