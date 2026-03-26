@@ -9,7 +9,7 @@ to strengthen fundamentals, problem-solving skills, and low-level understanding.
 
 ##  Topics Covered
 
-### 🔹 Arrays
+###  Arrays
 - Traversal
 - Insertion & Deletion
 - Linear Search
@@ -52,7 +52,7 @@ to strengthen fundamentals, problem-solving skills, and low-level understanding.
 
 ---
 
-### 🔹 Queue (Array Implementation)
+###  Queue (Array Implementation)
 - Create Queue
 - Enqueue
 - Dequeue
@@ -77,7 +77,7 @@ to strengthen fundamentals, problem-solving skills, and low-level understanding.
 	- cd DSA-Playground
 
 - Compile and Run:
-	- g++ main.cpp src/array.cpp src/linked_list.cpp src/doubly_linked_list.cpp src/stack.cpp src/queue.cpp ** ./a.out
+	- g++ main.cpp src/array.cpp src/linked_list.cpp src/doubly_linked_list.cpp src/stack.cpp src/queue.cpp && ./a.out
 
 ---
 
