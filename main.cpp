@@ -14,6 +14,7 @@ int main()
 		std::cout << "3. Doubly Linked List\n";
 		std::cout << "4. Stack\n";
 		std::cout << "5. Exit\n";
+		std::cout << "Enter your choice: ";
 		std::cin >> choice;
 		
 		switch(choice) {
