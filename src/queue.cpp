@@ -5,7 +5,7 @@ void queueMenu() {
 	
 	int choice, size;
 	int newItem, removedItem;
-	int top = -1, int front = -1;
+	int rear = -1, int front = -1;
 	int value;
 
 	Queue* queue = nullptr;
@@ -29,6 +29,7 @@ void queueMenu() {
 				std::cin >> size;
 				queue = createQueue(size);
 				std::cout << "Queue sucessfully created.\n";
+				break;
 
 			case 2:
 				if(queue = nullptr) {
@@ -42,8 +43,72 @@ void queueMenu() {
 						"No! The stack is not empty!\n";
 					}
 				}
+				break;
 
+			case 3:
+				if(queue == nullptr) {
+					std::cout << "Create queue first!\n";
+				}
+				else {
+					if(isFull(queue)) {
+						std::cout << "Yes! The queue is Full!\n";
+					}
+					else {
+						std::cout << "No! THe queue is not Full!\n";
+					}
+				}
+				break;
 
+			case 4:
+				if(queue == nullptr) {
+					std::cout << "Create queue first!\n";
+				}
+				else {
+					std::cout << "Enter element to be inserted: ";
+					std::cin >> value;
+					enqueue(queue, value, front, rear);
+				}
+				break;
+
+			case 5:
+				if(queue == nullptr) {
+					std::cout << "Create queue first!\n";
+				}
+				else {
+					removedItem = dequeue(queue, front, value);
+					std::cout << removed Item << "sucessfully removed from the queue\n";
+				}
+				break;
+
+			case 6:
+				if(stack == nullptr) {
+					std::cout << "Create queue first!\n";
+				}
+				else {
+					peekValue = peek(queue, front);
+				}
+				break;
+
+			case 7:
+				if(queue == nullptr) {
+					std::cout << "Create queue first!\n";
+				}
+				else {
+					freeQueue(queue);
+					queue = nullptr;
+
+					if(queue == nullptr) {
+						std::cout << "Queue memory freed!\n";
+					}
+				}
+				break;
+
+			case 8:
+				std::cout << "Returning to Main Menu...\n\n";
+				break;
+
+			default:
+				std::cout << "Invlaid choice! Try again.\n\n";
 		}
-	}
+	} while(choice != 8);
 }
