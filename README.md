@@ -77,7 +77,7 @@ to strengthen fundamentals, problem-solving skills, and low-level understanding.
 	- cd DSA-Playground
 
 - Compile and Run:
-	- g++ main.cpp src/array.cpp src/linked_list.cpp src/doubly_linked_list.cpp src/stack.cpp src/queue.cpp && ./a.out
+	- make run
 
 ---
 
