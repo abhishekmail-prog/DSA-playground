@@ -5,8 +5,8 @@ void queueMenu() {
 	
 	int choice, size;
 	int newItem, removedItem;
-	int rear = -1, int front = -1;
-	int value;
+	int rear = -1, front = -1;
+	int value, peekValue;
 
 	Queue* queue = nullptr;
 
@@ -14,8 +14,8 @@ void queueMenu() {
 		std::cout << "1. Create Queue\n";
 		std::cout << "2. isEmpty\n";
 		std::cout << "3. isFull\n";
-		std::cout << "4. Push\n";
-		std::cout << "5. Pop\n";
+		std::cout << "4. Enqueue\n";
+		std::cout << "5. Dequeue\n";
 		std::cout << "6. Peek\n";
 		std::cout << "7. Free Stack\n";
 		std::cout << "8. Exit\n";
@@ -75,17 +75,18 @@ void queueMenu() {
 					std::cout << "Create queue first!\n";
 				}
 				else {
-					removedItem = dequeue(queue, front, value);
-					std::cout << removed Item << "sucessfully removed from the queue\n";
+					dequeue(queue, front, value);
 				}
 				break;
 
 			case 6:
-				if(stack == nullptr) {
+				peekValue = peek(queue, front);
+
+				if(peekValue == -1) {
 					std::cout << "Create queue first!\n";
 				}
 				else {
-					peekValue = peek(queue, front);
+					std::cout << peekValue << " is the peek value.\n";
 				}
 				break;
 
@@ -111,4 +112,60 @@ void queueMenu() {
 				std::cout << "Invlaid choice! Try again.\n\n";
 		}
 	} while(choice != 8);
+}
+
+Queue* createQueue(int size) {
+	Queue* q = new Queue;
+	q->capacity = size;
+	q->front = -1;
+	q->rear = -1;
+	q->arr = new int[size];
+
+	return q;
+}
+
+bool isEmpty(Queue* q) {
+	return (q->front == -1);
+}
+
+bool isFull(Queue* q) {
+	return(q->rear == q->capacity - 1);
+}
+
+void enqueue(Queue* q, int value, int front, int rear) {
+	
+	if(isFull(q)) {
+		std::cout << "Queue Overflow!\n";
+		return;
+	}
+	if(q->front == -1) { q->front == 0; }
+
+	q->arr[++rear] = value;
+	
+	std::cout << value << " inserted sucessfully!\n";
+}
+
+void dequeue(Queue* q, int front, int rear) {
+	
+	if (isEmpty(q)) {
+		std::cout << "Queue Underflow\n";
+	} 
+	
+	std::cout << front << " removed sucessfully!\n";
+	front++;
+}
+
+int peek(Queue* q, int front) {
+	
+	if(isEmpty(q)) {
+		std::cout << "Stack is empty!\n";
+		return -1;
+	}
+
+	return q->arr[front];
+}
+
+void freeQueue(Queue *q) {
+	delete[] q->arr;
+	delete q;
 }

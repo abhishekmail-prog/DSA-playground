@@ -3,6 +3,7 @@
 #include "include/linked_list.h"
 #include "include/doubly_linked_list.h"
 #include "include/stack.h"
+#include "include/queue.h"
 
 int main()
 {
@@ -13,7 +14,8 @@ int main()
 		std::cout << "2. Linked List\n";
 		std::cout << "3. Doubly Linked List\n";
 		std::cout << "4. Stack\n";
-		std::cout << "5. Exit\n";
+		std::cout << "5. Queue\n";
+		std::cout << "6. Exit\n";
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
 		
@@ -31,13 +33,16 @@ int main()
 				stackMenu();
 				break;
 			case 5:
+				queueMenu();
+				break;
+			case 6:
 				std::cout << "Exiting DSA Playground. Goodbye!\n";
 				break;
 			default:
 				std::cout << "Invalid choice! Try again.\n";
 		}
 
-	} while(choice != 5);
+	} while(choice != 6);
 
 	return 0;
 }

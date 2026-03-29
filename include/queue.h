@@ -9,12 +9,12 @@ struct Queue {
 };
 
 void queueMenu();
-void createQueue(Queue* q);
-void isEmpty(Queue* q);
-void isFull(Queue* q);
+Queue* createQueue(int size);
+bool isEmpty(Queue* q);
+bool isFull(Queue* q);
 void enqueue(Queue* q, int value, int front, int rear);
 void dequeue(Queue* q, int front, int rear);
-void peek(Queue* q, int front);
+int peek(Queue* q, int front);
 void displayQueue(Queue* q, int front, int rear);
 void freeQueue(Queue* q);
 
