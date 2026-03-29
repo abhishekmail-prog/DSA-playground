@@ -1,0 +1,22 @@
+# Executables
+a.out
+app
+*.out
+
+# Object files
+*.o
+
+# Build directories
+build/
+
+# Temporary files
+*.tmp
+*.log
+
+# OS generated files
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+
