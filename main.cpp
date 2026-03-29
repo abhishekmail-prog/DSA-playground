@@ -7,7 +7,7 @@
 
 int main()
 {
-	int choice, value;
+	int choice;
 
 	do {
 		std::cout << "1. Array\n";

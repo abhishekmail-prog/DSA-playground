@@ -4,7 +4,6 @@
 void queueMenu() {
 	
 	int choice, size;
-	int newItem, removedItem;
 	int rear = -1, front = -1;
 	int value, peekValue;
 
@@ -32,15 +31,12 @@ void queueMenu() {
 				break;
 
 			case 2:
-				if(queue = nullptr) {
+				if(queue == nullptr) {
 					std::cout << "Create queue first!\n";
 				}
 				else {
 					if(isEmpty(queue)) {
 						std::cout << "Yes! The queue is Empty\n";
-					}
-					else {
-						"No! The stack is not empty!\n";
 					}
 				}
 				break;
@@ -138,7 +134,7 @@ void enqueue(Queue* q, int value, int front, int rear) {
 		std::cout << "Queue Overflow!\n";
 		return;
 	}
-	if(q->front == -1) { q->front == 0; }
+	if(q->front == -1) { q->front = 0; }
 
 	q->arr[++rear] = value;
 	

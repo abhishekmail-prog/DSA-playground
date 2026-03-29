@@ -292,7 +292,7 @@ Node* reverseLinkedList(Node* head) {
 	}
 	Node* prev = nullptr;
 	Node* curr = head;
-	Node* after = after;
+	Node* after = nullptr;
 
 	while (curr != nullptr) {
 
