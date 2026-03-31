@@ -1,5 +1,44 @@
+/*
+====================================================================================
+Stack Implementation (Array-Based)
+Author: Abhishek
+Project: DSA Playground
+
+Description:
+Provides a menu-driven stack implemenetation using arrays.
+
+A Stack follows LIFO (Last In First Out) principle.
+
+Key Components:
+1. Array to store elements
+2. Top pointer to track top element
+3. Capacity to limit stack size
+
+Opeartions Implemented:
+1. Create Stack
+2. Check if Empty
+3. Check if Full
+4. Push Element
+5. Pop Element
+6. Peek Element
+7. Free Stack Memory
+
+====================================================================================
+*/
+
 #include <iostream>
 #include "../include/stack.h"
+
+/*
+====================================================================================
+Stack Menu
+
+Provides a menu-driven interface allowing users
+to perform operations on the stack.
+
+The menu continues until the user selects Exit.
+====================================================================================
+*/
 
 void stackMenu() {
 
@@ -65,7 +104,7 @@ void stackMenu() {
 				else {
 					std::cout << "Enter element to be pushed: ";
 					std::cin >> value;
-					push(stack, value, top);
+					push(stack, value);
 				}
 				break;
 
@@ -74,7 +113,7 @@ void stackMenu() {
 					std::cout << "Create stack first!\n\n";
 				}
 				else {
-					poppedValue = pop(stack, top);
+					poppedValue = pop(stack);
 					std::cout << poppedValue << " sucessfully popped\n\n";
 				}
 				break;
@@ -84,7 +123,7 @@ void stackMenu() {
 					std::cout << "Create stack first!\n\n";
 				}
 				else {
-					peekValue = peek(stack, top);
+					peekValue = peek(stack);
 					std::cout << "Top element is: " << peekValue << "\n\n"; 
 				}
 				break;
@@ -96,7 +135,7 @@ void stackMenu() {
 				else {
 					freeStack(stack);
 					stack = nullptr;
-				
+
 					if(stack == nullptr) {
 						std::cout << "Stack memory freed Sucessfully\n\n";
 					}
@@ -130,8 +169,7 @@ bool isFull(Stack* s) {
 	return (s->top == s->capacity - 1);
 }
 
-void push(Stack* s, int value, int top) {
-	
+void push(Stack* s, int value) {
 	if(isFull(s)) {
 		std::cout << "Stack Overflow\n\n";
 		return;
@@ -143,7 +181,7 @@ void push(Stack* s, int value, int top) {
 	std::cout << value << " pushed successfully\n\n";
 }
 
-int pop(Stack* s, int top) {
+int pop(Stack* s) {
 	if(isEmpty(s)) {
 		std::cout << "Stack Underflow\n\n";
 		return -1;
@@ -155,8 +193,7 @@ int pop(Stack* s, int top) {
 	return poppedValue;
 }
 
-int peek(Stack* s, int top) {
-	
+int peek(Stack* s) {
 	if(isEmpty(s)) {
 		std::cout << "Stack is Empty\n\n";
 		return -1;
