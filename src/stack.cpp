@@ -152,6 +152,20 @@ void stackMenu() {
 	} while(choice != 8);
 }
 
+/*
+====================================================================================
+Create Stack
+
+Allocates memory for a stack and initializes:
+	- capacity
+	- top index
+	- internal array
+
+Returns:
+	Pointer to the created stack
+====================================================================================
+*/
+
 Stack* createStack(int size) {
 	Stack* s = new Stack;
 	s->capacity = size;
@@ -161,13 +175,53 @@ Stack* createStack(int size) {
 	return s;
 }
 
+/*
+====================================================================================
+Check is Stack is Empty
+
+Condition: 
+	top == -1
+
+Returns:
+	true  -> stack is empty
+	false -> stack has elements
+====================================================================================
+*/
+
 bool isEmpty(Stack* s) {
 	return (s->top == -1);
 }
 
+/*
+====================================================================================
+Check if Stack is Full
+
+Condition: 
+	top == capacity - 1
+
+Returns: 
+	true  -> stack is full
+	false -> stack has space
+====================================================================================
+*/
+
 bool isFull(Stack* s) {
 	return (s->top == s->capacity - 1);
 }
+
+/*
+====================================================================================
+Push Operation
+
+Inserts an element at the top of the stack.
+
+Steps:
+1. Check overflow condition
+2. Increment top
+3. Insert element
+
+====================================================================================
+*/
 
 void push(Stack* s, int value) {
 	if(isFull(s)) {
@@ -181,6 +235,22 @@ void push(Stack* s, int value) {
 	std::cout << value << " pushed successfully\n\n";
 }
 
+/*
+====================================================================================
+Pop Operation
+
+Removes and returns the top element.
+
+Steps:
+1. Check underflow condition
+2. Store top element
+3. Decrement top
+
+Returns:
+	popped element OR -1 if empty
+====================================================================================
+*/
+
 int pop(Stack* s) {
 	if(isEmpty(s)) {
 		std::cout << "Stack Underflow\n\n";
@@ -193,6 +263,17 @@ int pop(Stack* s) {
 	return poppedValue;
 }
 
+/*
+====================================================================================
+Peek Operation
+
+Returns the top element without removing it.
+
+Returns:
+	top element OR -1 if empty
+====================================================================================
+*/
+
 int peek(Stack* s) {
 	if(isEmpty(s)) {
 		std::cout << "Stack is Empty\n\n";
@@ -201,6 +282,18 @@ int peek(Stack* s) {
 
 	return s->arr[top];
 }
+
+/*
+====================================================================================
+Free Stack Memory
+
+Deallocates:
+	- internal array
+	- stack structure
+
+Prevents memory leaks
+====================================================================================
+*/
 
 void freeStack(Stack* s) {
 	delete[] s->arr;
